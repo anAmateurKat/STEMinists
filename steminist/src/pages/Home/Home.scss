@@ -1,0 +1,22 @@
+
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.home a {
+    font-size: 1.5rem;
+    border: none;
+    color: #fff;
+    background-color: #6b2999;
+    border-radius: 4px;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+
+.home a:hover {
+    background-color: #37184d;
+}
