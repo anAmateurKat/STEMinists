@@ -4,7 +4,7 @@
     background-color: #6b2999;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
@@ -12,7 +12,12 @@
 
 .header a {
     color: #fff;
+    padding: 0 30px;
     text-decoration: none;
-    justify-content: center;
-    background-color:#6b2999;
+    justify-content: left;
+    background-color: #6b2999;
+}
+
+.header p {
+    color: #fff;
 }
