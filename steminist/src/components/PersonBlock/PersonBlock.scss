@@ -1,0 +1,31 @@
+.person {
+    display: flex;
+    align-items: center;
+    margin: 75px auto;
+    padding: 10px;
+    border: solid #be8de0 3px;
+    border-radius: 4px;
+}
+
+.text {
+    padding: 10px;
+}
+
+.text div {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+
+.text div h1 {
+    background-color: #fff;
+    padding: 0;
+}
+
+.text h3 {
+    text-align: left;
+}
+
+.text p {
+    text-align: left;
+}
