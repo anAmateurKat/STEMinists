@@ -1,6 +1,7 @@
 import './App.css';
 import {Home} from './pages/Home/Home';
 import {Form} from './pages/Form/Form';
+import {LogIn} from './pages/LogIn/LogIn';
 import Recommendations from './pages/Recommendations';
 import Header from './components/Header/index';
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route index path='/' element={<Home />} />
           <Route index path='/form' element={<Form />} />
+          <Route index path='/logIn' element={<LogIn />} />
           <Route index path='/recommendations' element={<Recommendations />} />
         </Routes>
       </BrowserRouter>
