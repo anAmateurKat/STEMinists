@@ -4,7 +4,7 @@ import './Header.scss';
 const index = () => {
     return (
         <div className="header">
-            <h1>STEMinists</h1>
+            <h1><a href='../../'>STEMinists</a></h1>
         </div>
     )
 }

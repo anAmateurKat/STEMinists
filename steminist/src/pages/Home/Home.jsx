@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../App.css';
-import '../Home/Home.scss';
+import './Home.scss';
 
-const Home = () => {
+export const Home = () => {
     return (
         <div className='home'>
             <div className='content'>
@@ -12,5 +12,3 @@ const Home = () => {
         </div>
     )
 }
-
-export default Home
