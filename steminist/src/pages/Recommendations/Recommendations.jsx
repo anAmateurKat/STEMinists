@@ -37,7 +37,8 @@
 //     )
 // }
 // // Import Firestore database
-import {db} from '../../firebase';
+
+import {db,collection, addDoc} from '../../firebase';
 import { React, useState } from 'react';
 import '../../App.css';
 import './Recommendations.scss';
@@ -54,7 +55,7 @@ const Recommendations = () => {
   
     // Fetch the required data using the get() method
     const Fetchdata = ()=>{
-        db.collection("members").get().then((querySnapshot) => {
+        db.collection("data").get().then((querySnapshot) => {
              
             // Loop through the data and store
             // it in array to display
@@ -98,29 +99,29 @@ const Frame = ({type , fName , lName,email , location,pronouns ,interests ,linke
         <center>
             <div className="div">
                   
-<p>NAME : {fName}</p>
+<p>FirstName : {fName}</p>
    
                   
-<p>Age : {lName}</p>
+<p>LastName : {lName}</p>
   
                   
-<p>Course : {email}</p>
+<p>Email : {email}</p>
 
-<p>NAME : {location}</p>
+<p>Location : {location}</p>
    
                   
-<p>Age : {pronouns}</p>
+<p>Pronouns : {pronouns}</p>
   
                   
-<p>Course : {interests}</p>
+<p>Interests : {interests}</p>
 
-<p>NAME : {linkedin}</p>
+<p>Linkedln : {linkedin}</p>
    
                   
-<p>Age : {intro}</p>
+<p>Intro : {intro}</p>
   
                   
-<p>Course : {type}</p>
+<p>Type : {type}</p>
    
             </div>
         </center>
