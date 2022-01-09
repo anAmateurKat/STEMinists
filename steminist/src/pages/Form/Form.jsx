@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import '../../App.css';
 import './Form.scss';
 import {db} from '../../firebase';
+import { collection, addDoc } from "@firebase/firestore";
 
 export const Form = () => {
     const[fName, setFName] = useState("");
@@ -14,9 +15,9 @@ export const Form = () => {
     const[linkedin, setLinkedin] = useState("");
     const[intro, setIntro] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        db.collection('members').add({
+        const docRef = await addDoc(collection(db, "members"),{
             fName:fName,
             lName:lName,
             email:email,
@@ -26,14 +27,9 @@ export const Form = () => {
             discussion:discussion,
             linkedin:linkedin,
             intro:intro,
-        })
-        .then(() => {
-            alert("Form has been submitted ");
-        })
-        .catch((error) => {
-            alert(error.message);
         });
-
+        alert("Form has been submitted");
+  
         setFName('');
         setLName('');
         setEmail('');
@@ -86,8 +82,9 @@ export const Form = () => {
                     <label>Introduction/Summary: </label>
                     <input type={"text"} placeholder='Introduction' value={intro} onChange={(e) => setIntro(e.target.value)}/>
                 </div>
+                <button type="submit">Submit</button>
             </div>
-         <button type="submit">Submit</button>
+         
         </form>
     )
 }
