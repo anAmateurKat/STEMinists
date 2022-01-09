@@ -55,15 +55,25 @@ const Recommendations = () => {
   
     // Fetch the required data using the get() method
     const Fetchdata = ()=>{
-        db.collection("data").get().then((querySnapshot) => {
+        // db.collection("data").get().then((querySnapshot) => {
              
-            // Loop through the data and store
-            // it in array to display
-            querySnapshot.forEach(element => {
-                var data = element.data();
-                setInfo(arr => [...arr , data]);
+        //     // Loop through the data and store
+        //     // it in array to display
+        //     querySnapshot.forEach(element => {
+        //         var data = element.data();
+        //         setInfo(arr => [...arr , data]);
                   
-            });
+        //     });
+
+
+            db.collection("users").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                   console.log(`${doc.id} => ${doc.data()}`);
+                });
+
+
+
+
         })
     }
       

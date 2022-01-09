@@ -18,7 +18,7 @@ export const Form = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const docRef = await addDoc(collection(db, "members"),{
+        const docRef = await addDoc(collection(db, "users"),{
             type: type,
             fName:fName,
             lName:lName,
