@@ -37,10 +37,13 @@
 //     )
 // }
 // // Import Firestore database
+
 import {db} from '../../firebase';
 import { React, useState } from 'react';
 import '../../App.css';
 import './Recommendations.scss';
+import { collection, getDocs } from '@firebase/firestore';
+import { async } from '@firebase/util';
   
 const Recommendations = () => {
   
@@ -53,17 +56,24 @@ const Recommendations = () => {
       });
   
     // Fetch the required data using the get() method
-    const Fetchdata = ()=>{
-        db.collection("members").get().then((querySnapshot) => {
-             
-            // Loop through the data and store
-            // it in array to display
+    const Fetchdata = async()=>{
+            const querySnapshot = await getDocs(collection(db, "members"));
             querySnapshot.forEach(element => {
                 var data = element.data();
                 setInfo(arr => [...arr , data]);
                   
             });
-        })
+
+        // db.collection("members").get().then((querySnapshot) => {
+             
+        //     // Loop through the data and store
+        //     // it in array to display
+        //     querySnapshot.forEach(element => {
+        //         var data = element.data();
+        //         setInfo(arr => [...arr , data]);
+                  
+        //     });
+        // })
     }
       
     // Display the result on the page
