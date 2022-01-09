@@ -38,10 +38,16 @@
 // }
 // // Import Firestore database
 
+<<<<<<< HEAD
 import {db,collection, addDoc} from '../../firebase';
+=======
+import {db} from '../../firebase';
+>>>>>>> 3d1a365d06687ffb8c092252fc36d4c54dd9881e
 import { React, useState } from 'react';
 import '../../App.css';
 import './Recommendations.scss';
+import { collection, getDocs } from '@firebase/firestore';
+import { async } from '@firebase/util';
   
 const Recommendations = () => {
   
@@ -54,6 +60,7 @@ const Recommendations = () => {
       });
   
     // Fetch the required data using the get() method
+<<<<<<< HEAD
     const Fetchdata = ()=>{
         // db.collection("data").get().then((querySnapshot) => {
              
@@ -75,6 +82,26 @@ const Recommendations = () => {
 
 
         })
+=======
+    const Fetchdata = async()=>{
+            const querySnapshot = await getDocs(collection(db, "members"));
+            querySnapshot.forEach(element => {
+                var data = element.data();
+                setInfo(arr => [...arr , data]);
+                  
+            });
+
+        // db.collection("members").get().then((querySnapshot) => {
+             
+        //     // Loop through the data and store
+        //     // it in array to display
+        //     querySnapshot.forEach(element => {
+        //         var data = element.data();
+        //         setInfo(arr => [...arr , data]);
+                  
+        //     });
+        // })
+>>>>>>> 3d1a365d06687ffb8c092252fc36d4c54dd9881e
     }
       
     // Display the result on the page
@@ -109,6 +136,7 @@ const Frame = ({type , fName , lName,email , location,pronouns ,interests ,linke
         <center>
             <div className="div">
                   
+<<<<<<< HEAD
 <p>FirstName : {fName}</p>
    
                   
@@ -132,6 +160,17 @@ const Frame = ({type , fName , lName,email , location,pronouns ,interests ,linke
   
                   
 <p>Type : {type}</p>
+=======
+                <p>First Name : {fName}</p>
+                <p>Last Name : {lName}</p>
+                <p>Email : {email}</p>
+                <p>Location : {location}</p>
+                <p>Pronouns : {pronouns}</p>             
+                <p>Interests : {interests}</p>
+                <p>LinkedIn : {linkedin}</p>         
+                <p>Introduction : {intro}</p>
+                <p>Type : {type}</p>
+>>>>>>> 3d1a365d06687ffb8c092252fc36d4c54dd9881e
    
             </div>
         </center>
