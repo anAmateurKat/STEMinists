@@ -108,29 +108,15 @@ const Frame = ({type , fName , lName,email , location,pronouns ,interests ,linke
         <center>
             <div className="div">
                   
-<p>NAME : {fName}</p>
-   
-                  
-<p>Age : {lName}</p>
-  
-                  
-<p>Course : {email}</p>
-
-<p>NAME : {location}</p>
-   
-                  
-<p>Age : {pronouns}</p>
-  
-                  
-<p>Course : {interests}</p>
-
-<p>NAME : {linkedin}</p>
-   
-                  
-<p>Age : {intro}</p>
-  
-                  
-<p>Course : {type}</p>
+                <p>First Name : {fName}</p>
+                <p>Last Name : {lName}</p>
+                <p>Email : {email}</p>
+                <p>Location : {location}</p>
+                <p>Pronouns : {pronouns}</p>             
+                <p>Interests : {interests}</p>
+                <p>LinkedIn : {linkedin}</p>         
+                <p>Introduction : {intro}</p>
+                <p>Type : {type}</p>
    
             </div>
         </center>
