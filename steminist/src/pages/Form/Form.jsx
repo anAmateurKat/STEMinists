@@ -3,6 +3,7 @@ import '../../App.css';
 import './Form.scss';
 import {db} from '../../firebase';
 import { collection, addDoc } from "@firebase/firestore";
+import { Navigate } from 'react-router-dom';
 
 export const Form = () => {
     const[fName, setFName] = useState("");
@@ -39,6 +40,10 @@ export const Form = () => {
         setDiscussion('');
         setLinkedin('');
         setIntro('');
+
+        return (
+            window.location.href='../recommendations'
+        )
     };
 
 
